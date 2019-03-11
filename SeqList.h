@@ -67,7 +67,7 @@ public:
         return ret;
     }
 
-    bool get(int i, T& e)
+    bool get(int i, T& e) const
     {
         bool ret = ((0 <= i) && (i <= m_length));
 
