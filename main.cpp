@@ -7,7 +7,6 @@ using namespace MYlib;
 
 int main()
 {
-//
 
     return 0;
 }
