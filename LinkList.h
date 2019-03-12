@@ -38,6 +38,16 @@ protected:
 
         return ret;
     }
+
+    virtual Node* create()
+    {
+        return new Node();
+    }
+
+    virtual void destory(Node* pn)
+    {
+        delete pn;
+    }
 public:
     LinkList()
     {
@@ -58,7 +68,7 @@ public:
 
         if(ret)
         {
-            Node* node = new Node();
+            Node* node = create();
 
             if(node != nullptr)
             {
@@ -89,7 +99,7 @@ public:
 
             Node* toDel = current->next;
             current->next = toDel->next;
-            delete toDel;
+            destory(toDel);
 
             m_length--;
         }
@@ -173,7 +183,7 @@ public:
 
             m_header.next = toDel->next;
 
-            delete toDel;
+            destory(toDel);
         }
 
         m_length = 0;
